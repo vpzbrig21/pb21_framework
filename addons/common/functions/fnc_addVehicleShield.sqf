@@ -26,7 +26,7 @@
  * None
  *
  * Example:
- * [Vehicle, true, true, [true,true], true, true, 25] call PB21F_fnc_addVehicleShield;
+ * [Vehicle, true, true, [true,true], true, true, 25] call pb21_common_fnc_addVehicleShield;
  *
  * Public: No
  */
@@ -45,13 +45,13 @@ _rotors params [
     [ "_allowVRotorKill",   true,           [true]      ]
 ];
 
-if (!(_allowEngineKill)) then {_target setVariable ["PB21FVS_allowEngineKill", _allowEngineKill, true];};
-if (!(_allowFuelKill)) then {_target setVariable ["PB21FVS_allowFuelKill", _allowFuelKill, true];};
-if (!(_allowHRotorKill)) then {_target setVariable ["PB21FVS_allowHRotorKill", _allowHRotorKill, true];};
-if (!(_allowVRotorKill)) then {_target setVariable ["PB21FVS_allowVRotorKill", _allowVRotorKill, true];};
-if (!(_killEngine)) then {_target setVariable ["PB21FVS_killEngine", _allowVRotorKill, true];};
-if (_canExplode) then {_target setVariable ["PB21FVS_canExplode", _canExplode, true];};
-if (_excessiveHits != 20) then {_target setVariable ["PB21FVS_excessiveHits", _excessiveHits, true];};
+if (!(_allowEngineKill)) then {_target setVariable ["WVS_allowEngineKill", _allowEngineKill, true];};
+if (!(_allowFuelKill)) then {_target setVariable ["WVS_allowFuelKill", _allowFuelKill, true];};
+if (!(_allowHRotorKill)) then {_target setVariable ["WVS_allowHRotorKill", _allowHRotorKill, true];};
+if (!(_allowVRotorKill)) then {_target setVariable ["WVS_allowVRotorKill", _allowVRotorKill, true];};
+if (!(_killEngine)) then {_target setVariable ["WVS_killEngine", _allowVRotorKill, true];};
+if (_canExplode) then {_target setVariable ["WVS_canExplode", _canExplode, true];};
+if (_excessiveHits != 20) then {_target setVariable ["WVS_excessiveHits", _excessiveHits, true];};
 
 //Add the HandleDamage Eventhandler
 _target addEventHandler [
@@ -61,28 +61,28 @@ _target addEventHandler [
 
         //get some variables
         private _returnDamage = 0;
-        _hitPointEHits = _unit getVariable [format["PB21FVS_%1", _hitPoint], 0];
+        _hitPointEHits = _unit getVariable [format["WVS_%1", _hitPoint], 0];
 
         if (
 
             ("hull" in _hitPoint) || {
                 (_hitPoint == "") || {
-                    (("engine" in _hitPoint) && !(_unit getVariable ["PB21FVS_allowEngineKill", true])) || {
-                        (("fuel" in _hitPoint)  && !(_unit getVariable ["PB21FVS_allowFuelKill", true])) || {
-                            (("hrotor" in _hitPoint)  && !(_unit getVariable ["PB21FVS_allowHRotorKill", true])) || {
-                                (("vrotor" in _hitPoint)  && !(_unit getVariable ["PB21FVS_allowVRotorKill", true]))
+                    (("engine" in _hitPoint) && !(_unit getVariable ["WVS_allowEngineKill", true])) || {
+                        (("fuel" in _hitPoint)  && !(_unit getVariable ["WVS_allowFuelKill", true])) || {
+                            (("hrotor" in _hitPoint)  && !(_unit getVariable ["WVS_allowHRotorKill", true])) || {
+                                (("vrotor" in _hitPoint)  && !(_unit getVariable ["WVS_allowVRotorKill", true]))
             }}}}}
 
         ) then {
             
             if (_damage > 0.8) then {
-                if ((_unit getVariable ["PB21FVS_killEngine", true]) && {"hull" in _hitPoint}) then { _unit setHitPointDamage ["engine", 1]; systemChat "kill Engine";};
+                if ((_unit getVariable ["WVS_killEngine", true]) && {"hull" in _hitPoint}) then { _unit setHitPointDamage ["engine", 1]; systemChat "kill Engine";};
                 // if the total damage to the hitpoint is higher then 0.8...
                 // ... and it can explode ...
-                if (_unit getVariable ["PB21FVS_canExplode", false]) then {
+                if (_unit getVariable ["WVS_canExplode", false]) then {
                     //... add one excessive hit
-                    _unit setVariable [format["PB21FVS_%1", _hitPoint], (_hitPointEHits + 1), true];
-                    if (_hitPointEHits > _unit getVariable ["PB21FVS_excessiveHits", 20]) then {
+                    _unit setVariable [format["WVS_%1", _hitPoint], (_hitPointEHits + 1), true];
+                    if (_hitPointEHits > _unit getVariable ["WVS_excessiveHits", 20]) then {
                         //if we exceed the set count of excessive hits, let the damage pass
                         _returnDamage = _damage;
                     } else {

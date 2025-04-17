@@ -11,6 +11,7 @@ class CfgVehicles {
         uniformClass = "U_B_CombatUniform_mcam";
         icon = "iconMan";
         role = "Rifleman";
+        identityTypes[] = {"LanguageENG_F","Head_NATO"};
         weapons[] = {"Throw","Put"};
         respawnWeapons[] = {"Throw","Put"};
         magazines[] = {};
@@ -373,5 +374,157 @@ class CfgVehicles {
         class UniformInfo;
         engineer = 1;
         attendant = 1;
+    };
+
+    /* Leitende und Ausbilder */
+    class B_PB21F_Soldier_Leitender_F: B_PB21F_Soldier_base_F {
+        author = "PzBrig21";
+        scope = 2;
+        displayName = "Leitender";
+        icon = "iconManOfficer";
+        role = "Rifleman";
+        class UniformInfo;
+        engineer = 1;
+        attendant = 1;
+    };
+    class B_PB21F_Soldier_Ausbilder_F: B_PB21F_Soldier_base_F {
+        author = "PzBrig21";
+        scope = 2;
+        displayName = "Ausbilder";
+        icon = "iconManLeader";
+        role = "Rifleman";
+        class UniformInfo;
+        engineer = 1;
+        attendant = 1;
+    };
+
+    /* Flags */
+    class FlagCarrier;
+    class FlagCarrier_Asym;
+    class PB21_Flag_GER_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Deutschland";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_ger_co.paa'";
+        };
+    };
+    class PB21_Flag_GERBA_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Deutschland Bundesadler";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_gerba_co.paa'";
+        };
+    };
+    class PB21_Flag_GERBF_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Deutschland Bundesdienst";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_gerbf_co.paa'";
+        };
+    };
+    class PB21_Flag_ITA_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Italien";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_ita_co.paa'";
+        };
+    };
+    class PB21_Flag_ITARP_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Italien Republik";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_itarp_co.paa'";
+        };
+    };
+    class PB21_Flag_AUT_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Österreich";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_aut_co.paa'";
+        };
+    };
+    class PB21_Flag_AUTBD_F: FlagCarrier_Asym {
+        author = "PzBrig21";
+        class SimpleObject {
+            eden = 0;
+            animate[] = {{"flag",0}};
+            hide[] = {};
+            verticalOffset = 3.977;
+            verticalOffsetWorld = 0;
+            init = "''";
+        };
+        editorPreview = "";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Fahne Österreich Bundesadler";
+        class EventHandlers {
+            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_autbd_co.paa'";
+        };
     };
 };
