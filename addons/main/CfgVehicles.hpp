@@ -416,7 +416,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Deutschland";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_ger_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_ger_co.paa'";
         };
     };
     class PB21_Flag_GERBA_F: FlagCarrier_Asym {
@@ -434,7 +434,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Deutschland Bundesadler";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_gerba_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_gerba_co.paa'";
         };
     };
     class PB21_Flag_GERBF_F: FlagCarrier_Asym {
@@ -452,7 +452,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Deutschland Bundesdienst";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_gerbf_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_gerbf_co.paa'";
         };
     };
     class PB21_Flag_ITA_F: FlagCarrier_Asym {
@@ -470,7 +470,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Italien";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_ita_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_ita_co.paa'";
         };
     };
     class PB21_Flag_ITARP_F: FlagCarrier_Asym {
@@ -488,7 +488,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Italien Republik";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_itarp_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_itarp_ca.paa'";
         };
     };
     class PB21_Flag_AUT_F: FlagCarrier_Asym {
@@ -506,7 +506,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Österreich";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_aut_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_aut_co.paa'";
         };
     };
     class PB21_Flag_AUTBD_F: FlagCarrier_Asym {
@@ -524,7 +524,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Fahne Österreich Bundesadler";
         class EventHandlers {
-            init = "(_this select 0) setFlagTexture '\pb21f\main\data\flags\flag_autbd_co.paa'";
+            init = "(_this select 0) setFlagTexture 'z\pb21f\addons\main\data\flags\flag_autbd_co.paa'";
         };
     };
 };
